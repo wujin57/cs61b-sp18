@@ -37,7 +37,7 @@ public class Planet {
 		return G * this.mass * b.mass/ (r * r);	
  	
 	} 
-	public boolean equals(Planet b) {
+	private boolean equals(Planet b) {
 		if (this == b) return true;
 		if (xxPos == b.xxPos && yyPos == b.yyPos && xxVel == b.xxVel
 		    && yyVel == b.yyVel && mass == b.mass && imgFileName == b.imgFileName) return true;
