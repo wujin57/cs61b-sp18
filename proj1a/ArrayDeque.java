@@ -1,4 +1,4 @@
-public class ArrayDeque<T> {
+public class ArrayDeque<T>{
     public T[] items;
     public int size;
     public int nextFirst;
@@ -46,7 +46,7 @@ public class ArrayDeque<T> {
         size++;
     }
 
-    public T revomeFirst() {
+    public T removeFirst() {
         if (size == 0) {
             return null;
         }
