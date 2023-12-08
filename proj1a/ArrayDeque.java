@@ -1,4 +1,4 @@
-public class ArrayDeque<T>{
+public class ArrayDeque<T> {
     private T[] items;
     private int size;
     private int nextFirst;
@@ -55,7 +55,7 @@ public class ArrayDeque<T>{
         items[nextFirst] = null;
         size--;
         if (items.length >= 16 && size < items.length / 4) {
-            resize(items.length/2);
+            resize(items.length / 2);
         }
         return item;
     }
@@ -95,16 +95,6 @@ public class ArrayDeque<T>{
     public int size() {
         return size;
     }
-    public ArrayDeque(ArrayDeque other) {
-        items = (T[]) new Object[other.items.length];
-        size = other.size;
-        nextFirst = other.nextFirst;
-        nextLast = other.nextLast;
-        int current = plusOne(other.nextFirst);
-        for (int i = 0; i < other.items.length; i++) {
-            items[i] = (T) other.items[current];
-            current = plusOne(current);
-        }
-    }
+
 
 }
