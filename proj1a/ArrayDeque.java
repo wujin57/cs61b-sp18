@@ -1,8 +1,8 @@
 public class ArrayDeque<T> {
-    private T[] items;
-    private int size;
-    private int nextFirst;
-    private int nextLast;
+    public T[] items;
+    public int size;
+    public int nextFirst;
+    public int nextLast;
 
     public ArrayDeque() {
         items = (T[]) new Object[8];
@@ -73,7 +73,17 @@ public class ArrayDeque<T> {
         }
         return item;
     }
-
+    public boolean isEmpty() {
+        return size == 0;
+    }
+    public void printDeque() {
+        int index = plusOne(nextFirst);
+        for (int i = 0; i < size; i++) {
+            System.out.print(items[index] + " ");
+            index = plusOne(index);
+        }
+        System.out.println();
+    }
     public T get(int index) {
         if (index >= size) {
             return null;
@@ -96,4 +106,5 @@ public class ArrayDeque<T> {
             current = plusOne(current);
         }
     }
+
 }

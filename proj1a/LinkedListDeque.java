@@ -59,10 +59,10 @@ public class LinkedListDeque<T>{
     public void printDeque() {
         IntNode p = sentinel.next;
         for (int i = 0; i < size(); i++) {
-            System.out.println(p.item);
+            System.out.print(p.item + " ");
             p = p.next;
         }
-    }
+        System.out.println();    }
 
     public T removeFirst() {
         if (sentinel.next == sentinel) {
@@ -83,6 +83,15 @@ public class LinkedListDeque<T>{
             p = p.next;
         }
         return p.item;
+    }
+    public T getRecursive(int index) {
+        return getRecursiveHelper(index, sentinel.next);
+    }
+    private T getRecursiveHelper(int index, IntNode node) {
+        if (index == 0) {
+            return node.item;
+        }
+        return getRecursiveHelper(index - 1,node.next);
     }
 
 
